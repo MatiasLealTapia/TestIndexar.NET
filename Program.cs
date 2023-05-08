@@ -109,9 +109,31 @@ namespace TestIndexar.NET
 
                         // 5. Calcular IMC
                         case 5:
+                            Console.WriteLine("\nACTIVIDAD 5: CALCULAR IMC\n");
+                            Console.WriteLine("\nEscriba el peso en Kilos (ejemplo: 103,5) para calcular IMC:\n");
+                            try // try catch por si se introduce un dato que no es double.
+                            {
+                                double peso = Convert.ToDouble(Console.ReadLine()); // Input para seleccionar el peso para calcular IMC.
+                                Console.WriteLine("\nEscriba la estatura en metros (ejemplo: 1,65) para calcular IMC:\n");
+                                try // try catch por si se introduce un dato que no es double.
+                                {
+                                    double estatura = Convert.ToDouble(Console.ReadLine()); // Input para seleccionar la estatura para calcular IMC.
+                                    double imc = IMC.CalculateBMI(peso, estatura);
+                                    string categoria = IMC.BMICategory(imc);
+                                    Console.WriteLine("\nEl IMC calculado con peso " + peso + "[Kg] y estatura " + estatura + "[m] es de " + Convert.ToInt64(imc) + ", dando asi que la categoria es " + categoria + ".");
+                                }
+                                catch (Exception)
+                                {
+                                    Console.WriteLine("\n¡ERROR! Debe ser un número válido.");
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("\n¡ERROR! Debe ser un número válido.");
+                            }
                             break;
 
-                            // Si el numero seleccionado no está dentro de la lista entra acá.
+                        // Si el numero seleccionado no está dentro de la lista entra acá.
                         default:
                             Console.WriteLine("\nPor favor seleccione un número dentro de la lista");
                             break;

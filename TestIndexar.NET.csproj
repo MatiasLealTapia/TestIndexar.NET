@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Functions\Fibonacci.cs" />
+    <Compile Include="Functions\IMC.cs" />
     <Compile Include="Functions\Palindromo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
