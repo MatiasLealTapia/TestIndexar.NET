@@ -101,6 +101,18 @@ namespace TestIndexar.NET
 
                         // 3. Calculadora de notación polaca inversa
                         case 3:
+                            Console.WriteLine("\nACTIVIDAD 3: CALCULADORA DE NOTACIÓN POLACA INVERSA\n");
+                            Console.WriteLine("\nIngrese la expresión en notación polaca inversa:\n");
+                            try
+                            {
+                                string expresion = Console.ReadLine();
+                                Stack<double> resultado = CalcNotacionPolacaInv.Calculate(expresion);
+                                Console.WriteLine("\nEl resultado de la expresión es: " + resultado.Pop() + ".\n");
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("\n¡ERROR! Debe ser una expresión válida.");
+                            }
                             break;
 
                         // 4. Calcular ecuación cuadrática
