@@ -103,8 +103,23 @@ namespace TestIndexar.NET
                         case 3:
                             break;
 
-                        // 4. Calcular ecuación cuadratica
+                        // 4. Calcular ecuación cuadrática
                         case 4:
+                            Console.WriteLine("\nACTIVIDAD 4: CALCULAR ECUACIÓN CUADRÁTICA\n");
+                            Console.WriteLine("\nEscriba un numero para la posición a:\n");
+                            try // try catch por si se introduce un dato que no es double.
+                            {
+                                double a = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine("\nEscriba un numero para la posición b:\n");
+                                double b = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine("\nEscriba un numero para la posición c:\n");
+                                double c = Convert.ToDouble(Console.ReadLine());
+                                EcuacionCuadratica.CalculateQuadraticEquation(a, b, c);
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("\n¡ERROR! Debe ser un número válido.");
+                            }
                             break;
 
                         // 5. Calcular IMC
@@ -115,17 +130,10 @@ namespace TestIndexar.NET
                             {
                                 double peso = Convert.ToDouble(Console.ReadLine()); // Input para seleccionar el peso para calcular IMC.
                                 Console.WriteLine("\nEscriba la estatura en metros (ejemplo: 1,65) para calcular IMC:\n");
-                                try // try catch por si se introduce un dato que no es double.
-                                {
-                                    double estatura = Convert.ToDouble(Console.ReadLine()); // Input para seleccionar la estatura para calcular IMC.
-                                    double imc = IMC.CalculateBMI(peso, estatura);
-                                    string categoria = IMC.BMICategory(imc);
-                                    Console.WriteLine("\nEl IMC calculado con peso " + peso + "[Kg] y estatura " + estatura + "[m] es de " + Convert.ToInt64(imc) + ", dando asi que la categoria es " + categoria + ".");
-                                }
-                                catch (Exception)
-                                {
-                                    Console.WriteLine("\n¡ERROR! Debe ser un número válido.");
-                                }
+                                double estatura = Convert.ToDouble(Console.ReadLine()); // Input para seleccionar la estatura para calcular IMC.
+                                double imc = IMC.CalculateBMI(peso, estatura);
+                                string categoria = IMC.BMICategory(imc);
+                                Console.WriteLine("\nEl IMC calculado con peso " + peso + "[Kg] y estatura " + estatura + "[m] es de " + Convert.ToInt64(imc) + ", dando asi que la categoria es " + categoria + ".");
                             }
                             catch (Exception)
                             {

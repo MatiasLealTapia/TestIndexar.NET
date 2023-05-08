@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\EcuacionCuadratica.cs" />
     <Compile Include="Functions\Fibonacci.cs" />
     <Compile Include="Functions\IMC.cs" />
     <Compile Include="Functions\Palindromo.cs" />
